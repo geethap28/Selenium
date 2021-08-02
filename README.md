@@ -1,2 +1,3 @@
 # Selenium
-Selenium_Practice
+Selenium_Training 
+Practice sessions
