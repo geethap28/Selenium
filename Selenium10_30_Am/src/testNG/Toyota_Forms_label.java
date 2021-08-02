@@ -30,12 +30,15 @@ public class Toyota_Forms_label {
 		driver.findElement(By.xpath("//*[@data-select='title']")).click();
 		WebElement title = driver.findElement(By.xpath("//*[@data-value='Miss']"));
 		title.click();
+		String titleName= driver.findElement(By.xpath("//*[@data-select='title']")).getText();
 		String fname = "Test";
 		driver.findElement(By.name("firstname")).sendKeys(fname);
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		
-		String surName =title + fname + carname;
+		String surName =titleName + fname + carname;
 		driver.findElement(By.name("surname")).sendKeys(surName);
+		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+		
 		driver.findElement(By.name("email")).sendKeys("Test123@gmail.com");
 	}
 
@@ -47,8 +50,9 @@ public class Toyota_Forms_label {
 
 	@AfterMethod
 	public void afterMethod() {
-		driver.findElement(By.id("checkbox-user_consent")).click();
-		driver.findElement(By.id("checkbox-profile_consent")).click();
+	
+		driver.findElement(By.xpath("//*[@id=\"order_brochure\"]/div/form/div[7]/div[4]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"order_brochure\"]/div/form/div[7]/div[4]/div[1]/div[1]/label")).click();
 	}
 
 	@BeforeClass
