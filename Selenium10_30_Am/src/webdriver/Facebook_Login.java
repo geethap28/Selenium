@@ -12,8 +12,7 @@ public class Facebook_Login {
 		System.setProperty("webdriver.chrome.driver", "./browserdrivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://fb.com");
-		driver.manage().window().maximize();
-	//	driver.navigate().to("https://ttdsevaonline.com/#/registration");
+		driver.manage().window().maximize();	
 		driver.findElement(By.id("email")).sendKeys("abc123@gmail.com");
 		driver.findElement(By.id("pass")).sendKeys("abc1234");
 		driver.findElement(By.name("login")).click();
